@@ -1,78 +1,183 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>add-product</title>
-        <style>
-            body{
-                margin: 30px 30px 10px 50px;
-                background-image: url("2.png");
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
-        </style>
-    </head>
-    <body>
-        <form>  
-            <div class="container">  
-            <h1> Add new product</h1>
-            <label>product name</label>   
-          <input type="text" name="productname" placeholder= "productname" size="30" required /> 
-          </div><br>
-          <div>   
-          <label>   
-          size :  
-          </label>   
-            
-          <select>  
-          <option value="size">size</option>  
-          <option value="xs">xs</option>  
-          <option value="s">s</option>  
-          <option value="m">m</option>  
-          <option value="l">l</option>  
-          <option value="xl">xl</option>  
-          <option value="xxl">xxl</option>  
-          </select> 
-         </div><br>
-          <div>         
-          <label>
-            product description : 
-        </label><br> 
-            <textarea cols="80" rows="5" placeholder="product description" value="description" required>  
-            </textarea>  
-          </div><br>
-          <div>
-          <label>   
-          Quality:  
-          </label>
-          <input type="radio" value="1" name="quality" checked > 1   
-          <input type="radio" value="2" name="quality"> 2   
-          <input type="radio" value="3" name="quality"> 3  
-          <input type="radio" value="4" name="quality"> 4
-          <input type="radio" value="5" name="quality"> 5   
-          </div><br>
-          <div>
-          <label>   
-          Price :  
-          </label>  
-          <input type="number" name="price" />   
-          </div><br>
-          <div>
-              <label>MFD :</label>
-              <input type="date">
-          </div><br>
-          <div>
-            <label>Expiry date:</label>
-            <input type="date">
-        </div><br>
-          <div>
-              <label>
-                  Add Images
-              </label>
-              <input type="file" src="filetoupload">
-          </div><br>
-                   
-          <button type="submit" class="add">Add</button>    
-        </div>
-        </form>  
-    </body>
+  <head>
+    <title>products page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300i,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style type="text/css">
+      body{
+      margin: 0;
+      font-family:Nunito Sans;
+      }
+      h3{
+      text-align: center;
+      font-size: 30px;
+      margin: 0;
+      padding-top: 10px;
+      }
+      a{
+      text-decoration: none;
+      }
+      .gallery{
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      margin: 50px 0;
+      }
+      .content{
+      width: 24%;
+      margin: 15px;
+      box-sizing: border-box;
+      float: left;
+      text-align: center;
+      border-radius:10px;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+      padding-top: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      transition: .4s;
+      }
+      .content:hover{
+      box-shadow: 0 0 11px rgba(33,33,33,.2);
+      transform: translate(0px, -8px);
+      transition: .6s;
+      }
+      img{
+      width: 200px;
+      height: 200px;
+      text-align: center;
+      margin: 0 auto;
+      display: block;
+      }
+      p{
+      text-align: center;
+      color: #b2bec3;
+      padding: 0 8px;
+      }
+      h6{
+      font-size: 26px;
+      text-align: center;
+      color: #222f3e;
+      margin: 0;
+      }
+      ul{
+      list-style-type: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0px;
+      }
+      li{
+      padding: 5px;
+      }
+      .fa{
+      color: #ff9f43;
+      font-size: 26px;
+      transition: .4s;
+      }
+      .fa:hover{
+      transform: scale(1.3);
+      transition: .6s;
+      }
+      button{
+      text-align: center;
+      font-size: 24px;
+      color: #fff;
+      width: 100%;
+      padding: 15px;
+      border:0px;
+      outline: none;
+      cursor: pointer;
+      margin-top: 5px;
+      border-bottom-right-radius: 10px;
+      border-bottom-left-radius: 10px;
+      }
+      .buy-1{
+      background-color: #2183a2;
+      }
+      .buy-2{
+      background-color: #3b3e6e;
+      }
+      .buy-3{
+      background-color: #0b0b0b;
+      }
+      .bb{
+          background-color: black;
+          color: rgb(245, 245, 245);
+          float: right;
+          width: 150px;
+          font-size:large;
+      }
+      .bb:hover{
+          background-color: rgb(255, 255, 255);
+          color: #000000;
+      }
+      @media(max-width: 1000px){
+      .content{
+      width: 46%;
+      }
+      }
+      @media(max-width: 750px){
+      .content{
+      width: 100%;
+      }
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+        <a href="add.html"><button class="bb">Add products</button></a>
+    </div>
+    <div class="gallery">
+      <div class="content">
+        <img src="p1.jpg">
+        <h3>Cadbury Dairy Milk</h3>
+        <p>Milk Silk Chocolate Bar, 150g</p>
+        <p>MFD: jun 2021 &nbsp;&nbsp; Expire Date: jun 2022</p>
+        <h6>80 rs/_</h6>
+        <ul>
+          <li><i class="fa fa-star" aria-hidden="true"></i></li>
+          <li><i class="fa fa-star" aria-hidden="true"></i></li>
+          <li><i class="fa fa-star" aria-hidden="true"></i></li>
+          <li><i class="fa fa-star" aria-hidden="true"></i></li>
+          <li><i class="fa fa-star" aria-hidden="true"></i></li>
+        </ul>
+        <button class="buy-1">Buy Now</button>
+      </div>
+      <div class="content">
+        <img src="p2.jpeg">
+        <h3>Amul Dark Chocolate</h3>
+        <p>55% Rich In Cocoa, 150 g Carton</p>
+        <p>MFD: jun 2021 &nbsp;&nbsp; Expire Date: jun 2022</p>
+        <h6>100 rs/_</h6>
+        <ul>
+          <li><i class="fa fa-star" aria-hidden="true"></i></li>
+          <li><i class="fa fa-star" aria-hidden="true"></i></li>
+          <li><i class="fa fa-star" aria-hidden="true"></i></li>
+          <li><i class="fa fa-star" aria-hidden="true"></i></li>
+          <li><i class="fa fa-star" aria-hidden="true"></i></li>
+        </ul>
+        <button class="buy-2">Buy Now</button>
+      </div>
+      <div class="content">
+        <img src="3.jpg">
+        <h3>Nutella </h3>
+        <p>Hazelnut Spread With Cocoa, 750 g Jar</p>
+        <p>MFD: jun 2021 &nbsp;&nbsp; Expire Date: sep 2021</p>
+        <h6>769 rs/_</h6>
+        <ul>
+          <li><i class="fa fa-star" aria-hidden="true"></i></li>
+          <li><i class="fa fa-star" aria-hidden="true"></i></li>
+          <li><i class="fa fa-star" aria-hidden="true"></i></li>
+          <li><i class="fa fa-star" aria-hidden="true"></i></li>
+          <li><i class="fa fa-star" aria-hidden="true"></i></li>
+        </ul>
+        <button class="buy-3">Buy Now</button>
+      </div>
+    </div>
+  </body>
 </html>
